@@ -1,0 +1,6 @@
+import nltk
+from nltk import RegexpTokenizer
+tk= RegexpTokenizer('\s+',gaps=True)
+str="i love u "
+token=tk.tokenize(str)
+print(token)
