@@ -23,8 +23,8 @@ print("t3=",t3)
 print("execution time after loop unrolling ",t3-t2)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 inputstring
-
-def FA(s):
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**def FA(s):
     if len(s)<3:
         return "REJECTED"
     if s[:3]=="101":
@@ -35,4 +35,33 @@ def FA(s):
     return "rejected"
 input_string=['1','10101','101','10111','01010','100','1011101']
 for i in input_string:
-    print(f"input: {i} -> {FA(i)}")
+    print(f"input: {i} -> {FA(i)}")**
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+**def Quadruples():
+    num_of_input = int(input("Number of input: "))
+    results = [["result", "left", "operator", "right"]]
+    operators = set("+-*/%")
+
+    for count in range(num_of_input):
+        entry = input(f"Entry ({count + 1}): ")
+        left, right = entry.split("=")
+        left = left.strip()
+        right = right.strip()
+
+        if not right or not any(op in right for op in operators):
+            results.append([left, " ", "=", right])
+            continue
+
+        for i, char in enumerate(right):
+            if char in operators:
+                results.append([left, right[:i].strip(), char, right[i + 1:].strip()])
+                break
+
+    for result in results:
+        print(result)
+**
+Quadruples()
